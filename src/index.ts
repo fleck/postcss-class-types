@@ -80,6 +80,6 @@ export default _default;
 
 export type options = Parameters<typeof initializer>[0];
 
-export default plugin<options>("postcss-class-types", initializer);
-
 export const postcss = true;
+
+module.exports = plugin<options>("postcss-class-types", initializer);
