@@ -80,4 +80,4 @@ export default _default;
 
 export type options = Parameters<typeof initializer>[0];
 
-export default plugin<options>("postcss-ct.macro", initializer);
+export default plugin<options>("postcss-class-types", initializer);

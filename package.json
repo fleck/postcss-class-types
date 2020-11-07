@@ -30,16 +30,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "postcss-ct.macro",
+  "name": "postcss-class-types",
   "author": "Jonathan Fleckenstein",
-  "module": "dist/postcss-ct.macro.esm.js",
+  "module": "dist/postcss-class-types.esm.js",
   "size-limit": [
     {
-      "path": "dist/postcss-ct.macro.cjs.production.min.js",
+      "path": "dist/postcss-class-types.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/postcss-ct.macro.esm.js",
+      "path": "dist/postcss-class-types.esm.js",
       "limit": "10 KB"
     }
   ],
