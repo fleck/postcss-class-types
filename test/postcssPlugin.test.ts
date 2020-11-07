@@ -56,3 +56,19 @@ test("groups", async () => {
     (await fs.readFile(path.join(directory, "classNames.d.ts"))).toString()
   ).toMatchSnapshot();
 });
+
+test("space", async () => {
+  const directory = path.join(typesDirectory, "custom");
+
+  await run(
+    `.space-y-2>:not(template)~:not(template) {
+       --space-y-reverse:0!important;margin-top: calc(0.5rem*(1 - var(--space-y-reverse)))!important;
+       margin-bottom: calc(0.5rem*var(--space-y-reverse))!important
+     }`,
+    { directory }
+  );
+
+  expect(
+    (await fs.readFile(path.join(directory, "classNames.d.ts"))).toString()
+  ).toMatchSnapshot();
+});

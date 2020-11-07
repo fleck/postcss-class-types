@@ -20,7 +20,7 @@ const parser = createSelectorParser(selectors => {
     }
 
     selector.walk(node => {
-      if (!["class", "combinator"].includes(node.type)) {
+      if (node.type !== "class" && (node.type !== "combinator" || node.value === ">" || node.value === "~")) {
         node.remove();
       }
     });
