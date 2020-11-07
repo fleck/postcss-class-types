@@ -20,7 +20,10 @@ const parser = createSelectorParser(selectors => {
     }
 
     selector.walk(node => {
-      if (node.type !== "class" && (node.type !== "combinator" || node.value === ">" || node.value === "~")) {
+      if (
+        node.type !== "class" &&
+        (node.type !== "combinator" || [">", "~"].includes(node.value))
+      ) {
         node.remove();
       }
     });
@@ -61,6 +64,7 @@ export default _default;
         .trim()
         .replace(/\./g, "")
         .replace(/\\/g, "")
+        .replace(/,/g, "")
         .split(" ")
         .filter(Boolean)
         .forEach(cssClass => classes.add(cssClass));
@@ -82,7 +86,7 @@ export type options = Parameters<typeof initializer>[0];
 
 export const postcss = true;
 
-const postcssClassTypes = plugin<options>("postcss-class-types", initializer)
+const postcssClassTypes = plugin<options>("postcss-class-types", initializer);
 
 export default postcssClassTypes;
 
