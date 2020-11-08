@@ -91,3 +91,7 @@ const postcssClassTypes = plugin<options>("postcss-class-types", initializer);
 export default postcssClassTypes;
 
 module.exports = postcssClassTypes;
+
+module.exports.defaultDirectory = defaultDirectory;
+
+module.exports.classNamesDeclarationFilename = classNamesDeclarationFilename;
