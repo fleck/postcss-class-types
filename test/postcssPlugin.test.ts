@@ -20,7 +20,11 @@ const cleanupFiles = () => {
 beforeEach(cleanupFiles);
 afterEach(cleanupFiles);
 
-const classNamesPath = path.join(typesDirectory, "ct.macro", "classNames.d.ts");
+const classNamesPath = path.join(
+  typesDirectory,
+  "class-types",
+  "classTypes.d.ts"
+);
 
 test("generates types for classes", async () => {
   await run(".mt-1{ } .mt-2{}", {});
@@ -43,7 +47,7 @@ test("supports custom directories", async () => {
   await run("#app .mt-1{ } #app .mt-2:hover{}", { directory });
 
   expect(
-    (await fs.readFile(path.join(directory, "classNames.d.ts"))).toString()
+    (await fs.readFile(path.join(directory, "classTypes.d.ts"))).toString()
   ).toMatchSnapshot();
 });
 
