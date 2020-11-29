@@ -49,6 +49,8 @@ declare module "class-types.macro" {
   return async (root: postcssLib.Root) => {
     const classes = new Set<string>();
 
+    classes.add("");
+
     root.walkRules(rule => {
       parser.processSync(rule.selector, {
         lossless: false,
