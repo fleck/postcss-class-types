@@ -1,10 +1,10 @@
 {
-  "version": "0.11.0",
+  "version": "0.12.0",
   "license": "MIT",
   "main": "dist/index.js",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/fleck/postcss-class-types"
+    "type": "git",
+    "url": "https://github.com/fleck/postcss-class-types"
   },
   "typings": "dist/index.d.ts",
   "files": [
