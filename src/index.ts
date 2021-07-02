@@ -63,7 +63,7 @@ declare module "class-types.macro" {
           updateSelector: false,
         })
         .trim()
-        .replace(/\./g, "")
+        .replace(/(?<!\\)\./g, "")
         .replace(/\\/g, "")
         .replace(/,/g, "")
         .split(" ")

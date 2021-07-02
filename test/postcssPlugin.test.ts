@@ -82,3 +82,10 @@ test("comma", async () => {
 
   expect((await fs.readFile(classNamesPath)).toString()).toMatchSnapshot();
 });
+
+test("allows escaped period", async () => {
+  // prettier-ignore
+  await run(".px-1\\.5{padding-left: 0.375rem; padding-right: 0.375rem;}", {});
+
+  expect((await fs.readFile(classNamesPath)).toString()).toMatchSnapshot();
+});
