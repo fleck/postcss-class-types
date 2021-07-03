@@ -44,7 +44,6 @@ declare module "class-types.macro" {
   // prettier-ignore
   export default function ct<T extends ClassTypes>(...a: T[]): T;
 }
-
 `
   );
 
