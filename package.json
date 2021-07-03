@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "app-root-path": "^3.0.0",
-    "postcss": "^7.0.0",
+    "postcss": "*",
     "postcss-selector-parser": "^6.0.2"
   }
 }
